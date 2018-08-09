@@ -1,5 +1,8 @@
 <%= @cocktail.name %>
 <%= image_tag @cocktail.image , alt: "Le Wagon", width: 700 %>
-<%= @cocktail.doses %>
+<% @cocktail.doses.each do |dose| %>
+<%= dose.description %>
+<%= dose.ingredient %>
+<% end %>
 <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
 <%= link_to "Delete a dose", dose_path(@cocktail) %>
