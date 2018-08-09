@@ -1,0 +1,27 @@
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('https://images.unsplash.com/photo-1514447084304-976bcf033264?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e3d56067737441d85f6dafc9552c63bf&auto=format&fit=crop&w=1500&q=80');">
+  <div class="banner-content">
+    <h1>Mister Cocktail</h1>
+    <p>Find the best Cocktails of the world</p>
+  </div>
+</div>
+
+  <h1>Selected choice of best cocktails</h1>
+
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+    <div class="col-xs-12 col-sm-4">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.image %>);">
+        <div class="card-description">
+          <h2><%= cocktail.name %></h2>
+          <%= link_to "Show", cocktail_show_path(cocktail) %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <h4>You know an excellent cocktail and it's not in the list</h4>
+  <h5>Share it with everyone</h5>
+  <%= link_to "Add a new cocktail", new_cocktail_path, class: 'btn-primary' %>
+</div>
