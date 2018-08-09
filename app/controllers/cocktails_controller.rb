@@ -35,6 +35,6 @@ class CocktailsController < ApplicationController
 
   def cocktail_params
     # strong_params: whitelist params coming from potentially malicious user
-    params.require(:cocktail).permit(:name, :address)
+    params.require(:cocktail).permit(:name, :image)
   end
 end

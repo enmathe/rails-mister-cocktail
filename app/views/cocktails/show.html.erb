@@ -1,8 +1,38 @@
-<%= @cocktail.name %>
-<%= image_tag @cocktail.image , alt: "Le Wagon", width: 700 %>
-<% @cocktail.doses.each do |dose| %>
-<%= dose.description %>
-<%= dose.ingredient %>
-<% end %>
-<%= link_to "Add a dose", new_cocktail_dose_path(@cocktail) %>
-<%= link_to "Delete a dose", dose_path(@cocktail) %>
+
+<div class="ingredients-banner" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= @cocktail.image %>);">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-offset-4  col-sm-4">
+        <h1><%= @cocktail.name %></h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-offset-4  col-sm-4 ingredients">
+        <h4>Ingrédients</h4>
+        <% @cocktail.doses.each do |dose| %>
+          <p> <%= dose.description %> of <%= dose.ingredient.name %> <%= link_to "(Delete)", dose_path(dose.id), method: :delete %></p>
+
+        <% end %>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-offset-4  col-sm-4">
+        <%= link_to "Add an ingredient", new_cocktail_dose_path(@cocktail), class: 'btn-primary'%>
+      </div>
+    </div>
+    <br><br>
+     <div class="row">
+      <div class="col-sm-offset-4  col-sm-4">
+        <%= link_to "Back", cocktails_path %>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
