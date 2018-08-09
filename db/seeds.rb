@@ -9,3 +9,10 @@
 Ingredient.create(name: "lemon")
 Ingredient.create(name: "ice")
 Ingredient.create(name: "mint leaves")
+
+class Dose < ApplicationRecord
+  belongs_to :cocktail, optional: true
+  belongs_to :ingredient, optional: true
+
+  validates :description, presence: true, allow_blank: false
+end

@@ -1,10 +1,10 @@
 class Ingredient < ApplicationRecord
-  before_destroy :check
-
   has_many :doses, dependent: :destroy
   validates :name, presence: true,  allow_blank: false, uniqueness: true
 
+  before_destroy :check
+
   def check
-    return self.doses.empty?
+    return self.dose.empty?
   end
 end
