@@ -35,3 +35,10 @@
     </div>
   </div>
 </div>
+
+<%= simple_form_for(@cocktail) do |f| %>
+  <!-- [...] -->
+  <%= f.input :photos %>
+  <%= f.input :photos_cache, as: :hidden %>
+  <!-- [...] -->
+<% end %>
