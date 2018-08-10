@@ -3,7 +3,16 @@ class CocktailsController < ApplicationController
 
   def index
     # As a user, I can see all cocktails
-    @cocktails = Cocktail.all
+    if params[:query].present?
+      @query = params[:query]
+      if Cocktail.where("name iLike '%#{params[:query]}%'") != nil
+        @cocktails = Cocktail.where
+      else
+        @cocktails = Cocktail.where("name iLike '%#{params[:query]}%'")
+      end
+    else
+      @cocktails = Cocktail.all
+    end
   end
 
   # As a user I can see the details of a resto

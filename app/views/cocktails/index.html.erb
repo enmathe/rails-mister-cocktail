@@ -5,6 +5,21 @@
     <p>
       <span id="banner-typed-text"></span>
     </p>
+    <div class="row">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" name="query" type="search" placeholder="Type everything" aria-label="Search" value="<%= params[:query] %>">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Discover</button>
+      </form>
+    </div>
+    <% if @query.present? %>
+    <br><br>
+    <div class="row">
+      <div class="col">
+      <p>You searched for <strong><%= @query %></strong></p>
+      <p>We found <%= @cocktails.count %> cocktails out of our 10 000 000 cocktails on our website.</p>
+    </div>
+    <%end %>
+  </div>
   </div>
 </div>
 
