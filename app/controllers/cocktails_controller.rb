@@ -5,11 +5,7 @@ class CocktailsController < ApplicationController
     # As a user, I can see all cocktails
     if params[:query].present?
       @query = params[:query]
-      if Cocktail.where("name iLike '%#{params[:query]}%'") != nil
-        @cocktails = Cocktail.where
-      else
-        @cocktails = Cocktail.where("name iLike '%#{params[:query]}%'")
-      end
+      @cocktails = Cocktail.where("name iLike '%#{params[:query]}%'")
     else
       @cocktails = Cocktail.all
     end
