@@ -5,7 +5,7 @@
         <h1>Add a new cocktail</h1>
       </div>
     </div>
-  <%= simple_form_for(@cocktail) do |f| %>
+  <%= form_for(@cocktail) do |f| %>
     <div class="row">
       <div class="form-group col-sm-offset-4 col-sm-4">
         <%= f.label :name %>
@@ -23,15 +23,6 @@
     <br>
     <div class="row">
       <div class="col-sm-offset-4 col-sm-4">
-      <h5>Or upload one of your</h5>
-      <%= f.input :photo %>
-      <br>
-      <%= f.input :photo_cache, as: :hidden %>
-      </div>
-    </div>
-    <br>
-    <div class="row">
-      <div class="col-sm-offset-4 col-sm-4">
       <%= f.submit class: 'btn btn-primary' %>
       </div>
     </div>
@@ -44,4 +35,3 @@
     </div>
   </div>
 </div>
-
