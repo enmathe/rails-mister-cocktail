@@ -37,6 +37,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
 
 
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

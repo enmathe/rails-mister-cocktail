@@ -16,6 +16,13 @@ Rails.application.routes.draw do
     resources :doses, only: [:new, :create]
   end
 
+   resources :cocktails, only: [:show] do
+    # NOPE
+    # resources :plants, only: [:new, :create, :destroy] # => gardens/:garden_id/plants/:id
+    resources :reviews, only: [:new, :create]
+  end
+
+
   resources :doses, only: [:destroy]
 
 end

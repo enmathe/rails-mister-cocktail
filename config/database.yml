@@ -55,15 +55,6 @@ development:
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-
-development:
-  <<: *default
-  database: rails-mister-cocktail_development
-
 test:
   <<: *default
   database: rails-mister-cocktail_test
@@ -92,4 +83,7 @@ production:
   database: rails-mister-cocktail_production
   username: rails-mister-cocktail
   password: <%= ENV['RAILS-MISTER-COCKTAIL_DATABASE_PASSWORD'] %>
+
+production:
+  <<: *default
   url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
