@@ -3,6 +3,3 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   # Remove everything else
 end
-
-rails g migration AddPhotoToCocktails photo:string
-rails db:migrate
