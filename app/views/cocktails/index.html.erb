@@ -21,7 +21,7 @@
                 url(<% if cocktail.image.nil? %>
                 <%= cl_image_tag @article.photo %>
                 <% else %>
-                <%= cocktail.image %>
+                <%= cocktail.photo %>
                 <% end %>);">
             <div class="card-description">
               <h2><%= cocktail.name %></h2>
