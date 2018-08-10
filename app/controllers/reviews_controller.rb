@@ -2,15 +2,6 @@ class ReviewsController < ApplicationController
    def new
     @cocktail = Cocktail.find(params[:cocktail_id])
     @review  = Review.new
-    # @reviews = Review.all(review_params))
-    # @reviews_array = []
-    # <% if @reviews != nil %>
-    #     <% @reviews.each do |review| %>
-    #      <% @reviews_array << review.rating %>
-    #      <% end%>
-    #      <% @avg_review = @reviews.sum / @reviews.size %>
-    #      <%= @avg_review %>
-    #    <% end %>
   end
 
   def create
