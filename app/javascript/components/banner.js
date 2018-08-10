@@ -9,5 +9,3 @@ function loadDynamicBannerText() {
 }
 
 export { loadDynamicBannerText };
-
-import swal from 'sweetalert';
