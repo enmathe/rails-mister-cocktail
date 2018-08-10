@@ -3,6 +3,10 @@ default: &default
   encoding: unicode
   pool: 5
 
+production:
+  <<: *default
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
+
 development:
   <<: *default
   database: rails-mister-cocktail_development
@@ -11,6 +15,3 @@ test:
   <<: *default
   database: rails-mister-cocktail_test
 
-  production:
-  <<: *default
-  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
